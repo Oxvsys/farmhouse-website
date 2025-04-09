@@ -69,7 +69,10 @@ export class AppComponent {
             icon: 'success',
             confirmButtonText: 'OK'
           });
+
+          form.resetForm();
         },
+
         error: (error) => {
           this.isLoading = false;
           Swal.fire({
