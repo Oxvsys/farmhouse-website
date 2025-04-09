@@ -3,6 +3,7 @@ import { Component, ViewChild } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 
+
 declare var $: any; // Declare jQuery
 
 @Component({
@@ -34,6 +35,7 @@ export class AppComponent {
   }
 
   onCaptchaResolved(captchaResponse: string) {
+
     this.formData.recaptcha = captchaResponse;
   }
 
@@ -41,38 +43,45 @@ export class AppComponent {
   isLoading = false;  // Declare this in your component
 
   onSubmit(form: any) {
-    console.log(form.value)
     if (form.valid) {
-      this.isLoading = true;  // Start loader
-      const apiUrl = 'https://sayalisanchi.ajems.in/public-access/app/website/form/online-booking/submit';
+      this.isLoading = true;
 
-      this.http.post(apiUrl, this.formData).subscribe({
+      const payload = {
+        data:
+        {
+          string_20250408120124701: this.formData.full_name,
+          string_20250408120153885: this.formData.email,
+          datetime_20250409063431768: this.formData.date,
+          dropdown_20250408120313945: this.formData.package,
+          description_20250408120421751: `<p>${this.formData.description}</p>`,
+        },
+
+        recaptcha: this.formData.recaptcha
+      };
+
+      const apiUrl = 'https://sayalisanchi.buildprohub-server.com/tenant_user_custom_app/third_party/online-booking/third_party_data/';
+
+      this.http.post(apiUrl, payload).subscribe({
         next: (response) => {
-          this.isLoading = false;  // Stop loader
+          this.isLoading = false;
           Swal.fire({
             title: 'Booking Confirm!',
-
             icon: 'success',
             confirmButtonText: 'OK'
           });
-
         },
         error: (error) => {
-          this.isLoading = false;  // Stop loader
-          let errorMessage = 'An unexpected error occurred. Please try again later.';
-
-
+          this.isLoading = false;
           Swal.fire({
-            title: 'form not submitted!',
-            html: errorMessage,
+            title: 'Form not submitted!',
+            html: 'An unexpected error occurred. Please try again later.',
             icon: 'error',
             confirmButtonText: 'OK'
           });
-
-
           console.error('API Error:', error);
         }
       });
+
     } else {
       Swal.fire({
         title: 'Form Submission Failed!',

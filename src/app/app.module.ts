@@ -6,6 +6,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { AboutUsComponent } from './@components/about-us/about-us.component';
+import { BookingComponent } from './@components/booking/booking.component';
+import { ContactUsComponent } from './@components/contact-us/contact-us.component';
+import { GalleryComponent } from './@components/gallery/gallery.component';
+import { PackageComponent } from './@components/package/package.component';
+import { ServiceComponent } from './@components/service/service.component';
+import { TeamComponent } from './@components/team/team.component';
+import { TestimonialComponent } from './@components/testimonial/testimonial.component';
 
 
 
@@ -13,6 +21,14 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     SafeHTMLPipe,
+    AboutUsComponent,
+    BookingComponent,
+    ContactUsComponent,
+    GalleryComponent,
+    PackageComponent,
+    ServiceComponent,
+    TeamComponent,
+    TestimonialComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +37,8 @@ import { AppRoutingModule } from './app-routing.module';
     ReactiveFormsModule,
     HttpClientModule,
     RecaptchaModule,
-    RecaptchaFormsModule
+    RecaptchaFormsModule,
+
   ],
   providers: [[], {
 

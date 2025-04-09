@@ -1,4 +1,25 @@
 /********** Template CSS **********/
+
+/* Responsive reCAPTCHA scaling */
+.recaptcha-wrapper {
+    transform: scale(0.85);
+    /* You can adjust this scale */
+    transform-origin: 0 0;
+}
+
+@media (max-width: 768px) {
+    .recaptcha-wrapper {
+        transform: scale(0.75);
+    }
+}
+
+@media (max-width: 576px) {
+    .recaptcha-wrapper {
+        transform: scale(0.65);
+    }
+}
+
+
 :root {
     --primary: #425e32;
     --secondary: #FE8800;
@@ -407,6 +428,8 @@
     border-radius: 35px;
     transition: .3s;
 }
+
+
 
 .footer .btn.btn-social:hover {
     color: var(--primary);
