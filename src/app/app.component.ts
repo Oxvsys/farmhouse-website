@@ -31,7 +31,7 @@ export class AppComponent {
   };
 
   constructor(private http: HttpClient) {
-
+    this.getpackages()
   }
 
   onCaptchaResolved(captchaResponse: string) {
@@ -95,6 +95,58 @@ export class AppComponent {
     }
   }
 
+
+
+  packages: any[] = [];
+
+
+  getpackages() {
+    const apiUrl = 'https://sayalisanchi.buildprohub-server.com/tenant_user_custom_app/third_party/packages/third_party_data/';
+
+    this.http.get<any[]>(apiUrl).subscribe({
+      next: (response) => {
+        const cardData = response.map((item) => {
+          const data = item.data || {};
+          const duration = data.number_20250414044819204
+
+          const people = data.number_20250414045134277
+
+
+          // Get description
+          const descriptionKey = Object.keys(data).find((key) => key.startsWith('description_'));
+          const description = descriptionKey ? data[descriptionKey] : '<p>No description</p>';
+
+          // Get price (use highest number from number_ keys)
+          const numberValues = Object.entries(data)
+            .filter(([key, val]) => key.startsWith('number_') && typeof val === 'number')
+            .map(([_, val]) => val as number);
+          const price = numberValues.length ? Math.max(...numberValues) : 0;
+
+          const fileData = item.file_data || [];
+
+          // Get image for card (field_name starts with image_)
+          const cardImage = fileData.find((file: any) => file.field_name.startsWith('image_'))?.file ?? '/assets/img/default.png';
+
+          // Get file for "Read More" (field_name starts with file_)
+          const readMoreLink = fileData.find((file: any) => file.field_name.startsWith('file_'))?.file ?? '#';
+
+          return {
+            image: cardImage,
+            price,
+            description,
+            duration,
+            people,
+            readMoreLink
+          };
+        });
+
+        this.packages = cardData;
+      },
+      error: (error) => {
+        console.error('API Error:', error);
+      }
+    });
+  }
 
 
 

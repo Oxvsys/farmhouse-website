@@ -114,7 +114,7 @@
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                 <div class="position-relative h-100">
-                    <img class="img-fluid position-absolute w-100 h-100" src="/assets/img/about_2.png" alt=""
+                    <img class="img-fluid position-absolute w-100 h-100" src="/assets/img/about_us.jpg" alt=""
                         style="object-fit: cover;">
                 </div>
             </div>
@@ -257,7 +257,8 @@
                 <div class="row g-3">
                     <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
                         <a class="position-relative d-block overflow-hidden">
-                            <img class="img-fluid" src="/assets/img/gallery_1.png" alt="">
+                            <img class="img-fluid " style="width: 800px;height: 300px;" src="/assets/img/gallery_5.jpg"
+                                alt="">
                             <!-- <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">30%
                                 OFF</div>
                             <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
@@ -266,7 +267,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
                         <a class="position-relative d-block overflow-hidden">
-                            <img class="img-fluid" src="/assets/img/gallery_2.png" alt="">
+                            <img class="img-fluid" src="/assets/img/gallery_6.jpg" alt="">
                             <!-- <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">25%
                                 OFF</div>
                             <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
@@ -275,7 +276,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
                         <a class="position-relative d-block overflow-hidden">
-                            <img class="img-fluid" src="/assets/img/gallery_3.png" alt="">
+                            <img class="img-fluid" src="/assets/img/gallery_7.jpg" alt="">
                             <!-- <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">35%
                                 OFF</div>
                             <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
@@ -286,7 +287,7 @@
             </div>
             <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
                 <a class="position-relative d-block h-100 overflow-hidden">
-                    <img class="img-fluid position-absolute w-100 h-100" src="/assets/img/gallery_4.png" alt=""
+                    <img class="img-fluid position-absolute w-100 h-100" src="/assets/img/gallery_8.jpg" alt=""
                         style="object-fit: cover;">
                     <!-- <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">20% OFF
                     </div>
@@ -301,7 +302,7 @@
 
 
 <!-- Package Start -->
-<div class="container-xxl py-5" id="package">
+<!-- <div class="container-xxl py-5" id="package">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 class="section-title bg-white text-center text-primary px-3">Packages</h6>
@@ -314,8 +315,7 @@
                         <img class="img-fluid" src="/assets/img/package_1.png" alt="">
                     </div>
                     <div class="d-flex border-bottom">
-                        <!-- <small class="flex-fill text-center border-end py-2"><i
-                                class="fa fa-map-marker-alt text-primary me-2"></i>Thailand</small> -->
+                        
                         <small class="flex-fill text-center border-end py-2"><i
                                 class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
                         <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2
@@ -348,8 +348,7 @@
                         <img class="img-fluid" src="/assets/img/gallery_3.png" alt="">
                     </div>
                     <div class="d-flex border-bottom">
-                        <!-- <small class="flex-fill text-center border-end py-2"><i
-                                class="fa fa-map-marker-alt text-primary me-2"></i>Indonesia</small> -->
+                      
                         <small class="flex-fill text-center border-end py-2"><i
                                 class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
                         <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>5
@@ -382,8 +381,7 @@
                         <img class="img-fluid" src="/assets/img/package_2.png" alt="">
                     </div>
                     <div class="d-flex border-bottom">
-                        <!-- <small class="flex-fill text-center border-end py-2"><i
-                                class="fa fa-map-marker-alt text-primary me-2"></i>Malaysia</small> -->
+                       
                         <small class="flex-fill text-center border-end py-2"><i
                                 class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
                         <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>5
@@ -412,8 +410,260 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Package End -->
+
+<!-- <div class="container-xxl py-5" id="package">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Packages</h6>
+            <h1 class="mb-5">Awesome Packages</h1>
+        </div>
+
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6 wow fadeInUp d-flex" *ngFor="let pkg of packages; let i = index"
+                [attr.data-wow-delay]="i * 0.2 + 's'">
+                <div class="package-item d-flex flex-column h-100">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" [src]="pkg.image" alt="Package Image">
+
+
+                    </div>
+                    <div class="d-flex border-bottom">
+                        <small class="flex-fill text-center border-end py-2">
+                            <i class="fa fa-calendar-alt text-primary me-2"></i>{{ pkg.duration }}
+                        </small>
+                        <small class="flex-fill text-center py-2">
+                            <i class="fa fa-user text-primary me-2"></i>{{ pkg.people }} Person
+                        </small>
+                    </div>
+                    <div class="text-center p-4 d-flex flex-column h-100">
+                        <h3 class="mb-0">₹{{ pkg.price }}</h3>
+                        <div class="mb-3">
+                            <small class="fa fa-star text-primary" *ngFor="let star of [1,2,3,4,5]"></small>
+                        </div>
+                        <div [innerHTML]="pkg.description" class="mb-3 flex-grow-1"></div>
+                        <div class="d-flex justify-content-center mb-2 mt-auto">
+                            <a [href]="pkg.readMoreLink" target="_blank" class="btn btn-sm btn-primary px-3 border-end"
+                                style="border-radius: 30px 0 0 30px;">Read More</a>
+                            <a href="/#book_now" class="btn btn-sm btn-primary px-3"
+                                style="border-radius: 0 30px 30px 0;">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div> -->
+
+
+<!-- 
+<div class="container-xxl py-5" id="package">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Packages</h6>
+            <h1 class="mb-5">Awesome Packages</h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6 wow fadeInUp d-flex" *ngFor="let pkg of packages; let i = index"
+                [attr.data-wow-delay]="i * 0.2 + 's'">
+                <div class="package-item d-flex flex-column " style="height: 600px;">
+                    
+                    <div class="overflow-hidden" style="height: 40%;">
+                        <img class="img-fluid h-100 w-100" [src]="pkg.image" alt="Package Image"
+                            style="object-fit: cover;">
+                    </div>
+                  
+                    <div class="d-flex flex-column" style="height: 40%;">
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2">
+                                <i class="fa fa-calendar-alt text-primary me-2"></i>{{ pkg.duration }}
+                            </small>
+                            <small class="flex-fill text-center py-2">
+                                <i class="fa fa-user text-primary me-2"></i>{{ pkg.people }} Person
+                            </small>
+                        </div>
+                        <div class="text-center p-4 d-flex flex-column h-100">
+                            <h3 class="mb-0">₹{{ pkg.price }}</h3>
+                            <div class="mb-2">
+                                <small class="fa fa-star text-primary" *ngFor="let star of [1,2,3,4,5]"></small>
+                            </div>
+                            <div class="mb-2 flex-grow-1 overflow-auto" style="min-height: 0;">
+                                <div [innerHTML]="pkg.description"></div>
+                            </div>
+                            <div class="d-flex justify-content-center ">
+                                <a [href]="pkg.readMoreLink" target="_blank"
+                                    class="btn btn-sm btn-primary px-3 border-end"
+                                    style="border-radius: 30px 0 0 30px;">Read More</a>
+                                <a href="/#book_now" class="btn btn-sm btn-primary px-3"
+                                    style="border-radius: 0 30px 30px 0;">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .package-item {
+        border: 1px solid #dee2e6;
+        border-radius: 10px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        height: 100%;
+        
+    }
+
+    .package-item img {
+        transition: transform 0.5s ease;
+    }
+
+    .package-item:hover img {
+        transform: scale(1.1);
+    }
+
+    .package-item .btn-primary {
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+    }
+
+    .package-item .btn-primary:hover {
+        background-color: #0b5ed7;
+        border-color: #0a58ca;
+    }
+
+   
+    .row.g-4 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .row.g-4>[class*='col-'] {
+        display: flex;
+    }
+</style> -->
+
+
+
+
+
+
+
+
+
+<!-- <div class="container-xxl py-5" id="package">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Packages</h6>
+            <h1 class="mb-5">Awesome Packages</h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6 wow fadeInUp " *ngFor="let pkg of packages; let i = index"
+                [attr.data-wow-delay]="i * 0.2 + 's'">
+                <div class="package-item">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" [src]="pkg.image" width="600" height="400" alt="Package Image">
+                    </div>
+                    <div class="d-flex border-bottom">
+
+                        <small class="flex-fill text-center border-end py-2"><i
+                                class="fa fa-calendar-alt text-primary me-2"></i>{{ pkg.duration }}</small>
+                        <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>{{
+                            pkg.people }}
+                            Person</small>
+                    </div>
+                    <div class="text-center p-4">
+                        <h3 class="mb-0">₹{{ pkg.price }}</h3>
+                        <div class="mb-3">
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                        </div>
+                        <p [innerHTML]="pkg.description"></p>
+                        <div class="d-flex justify-content-center mb-2 ">
+                            <a [href]="pkg.readMoreLink" target="_blank" class="btn btn-sm btn-primary px-3 border-end"
+                                style="border-radius: 30px 0 0 30px;">Read More</a>
+                            <a href="/#book_now" class="btn btn-sm btn-primary px-3"
+                                style="border-radius: 0 30px 30px 0;">Book
+                                Now</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div> -->
+
+<!-- Package End -->
+
+
+
+
+
+
+<div class="container-xxl py-5" id="package">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Packages</h6>
+            <h1 class="mb-5">Awesome Packages</h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" *ngFor="let pkg of packages; let i = index"
+                [attr.data-wow-delay]="i * 0.2 + 's'">
+
+                <div class="package-item position-relative" style="padding-bottom: 70px;height: 550px;">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" [src]="pkg.image" width="600" height="400" style="object-fit: cover;"
+                            alt="Package Image">
+                    </div>
+                    <div class="d-flex border-bottom">
+                        <small class="flex-fill text-center border-end py-2">
+                            <i class="fa fa-calendar-alt text-primary me-2"></i>{{ pkg.duration }} Days
+                        </small>
+                        <small class="flex-fill text-center py-2">
+                            <i class="fa fa-user text-primary me-2"></i>{{ pkg.people }} Person
+                        </small>
+                    </div>
+                    <div class="text-center p-4">
+                        <h3 class="mb-0">₹{{ pkg.price }}</h3>
+                        <div class="mb-3">
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                        </div>
+                        <p [innerHTML]="pkg.description"></p>
+                    </div>
+
+                    <!-- Fixed Bottom Buttons Inside Card -->
+                    <div class="d-flex justify-content-center position-absolute w-100 px-4"
+                        style="bottom: 20px; left: 0;">
+                        <a [href]="pkg.readMoreLink" target="_blank" class="btn btn-sm btn-primary px-3 border-end"
+                            style="border-radius: 30px 0 0 30px;">Read More</a>
+                        <a href="/#book_now" class="btn btn-sm btn-primary px-3"
+                            style="border-radius: 0 30px 30px 0;">Book Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 
 <!-- Booking Start -->
@@ -424,11 +674,16 @@
                 <div class="col-md-6 text-white">
                     <h6 class="text-white text-uppercase">Booking</h6>
                     <h1 class="text-white mb-4">Online Booking</h1>
-                    <p class="mb-4">Booking your stay at our luxury villa is quick and hassle-free! Simply browse our
-                        available dates, select your preferred package, and confirm with easy online payment options.
-                        Once booked, you’ll receive instant confirmation, ensuring a smooth and secure process.</p>
-                    <p class="mb-4">No long forms or complicated steps—just a seamless experience from start to finish.
-                        Upon arrival, relax and immerse yourself in a world of comfort, privacy, and adventure. Enjoy a
+                    <p class="mb-4">Booking your stay at our luxury villa is quick and hassle-free!
+                        Simply browse our
+                        available dates, select your preferred package, and confirm with easy online
+                        payment options.
+                        Once booked, you’ll receive instant confirmation, ensuring a smooth and
+                        secure process.</p>
+                    <p class="mb-4">No long forms or complicated steps—just a seamless experience
+                        from start to finish.
+                        Upon arrival, relax and immerse yourself in a world of comfort, privacy, and
+                        adventure. Enjoy a
                         stress-free getaway with our effortless booking system!
                     </p>
                     <a class="btn btn-outline-light py-3 px-5 mt-2" href="/#">Read More</a>
@@ -624,9 +879,12 @@
                                             <select class="form-select text-white" style="background-color: #425e32;"
                                                 id="select1" name="package" [(ngModel)]="formData.package">
                                                 <div class="bg-dark">
-                                                    <option value="Honeymoon Delight">Honeymoon Delight</option>
-                                                    <option value="Family Fun Escape">Family Fun Escape</option>
-                                                    <option value="Corporate Retreats">Corporate Retreats</option>
+                                                    <option value="Honeymoon Delight">Honeymoon
+                                                        Delight</option>
+                                                    <option value="Family Fun Escape">Family Fun
+                                                        Escape</option>
+                                                    <option value="Corporate Retreats">Corporate
+                                                        Retreats</option>
                                                 </div>
                                             </select>
                                             <label for="select1">Package</label>
@@ -689,7 +947,8 @@
                     <h5 class="mt-4">Select Your Stay</h5>
                     <hr class="w-25 mx-auto bg-primary mb-1">
                     <hr class="w-50 mx-auto bg-primary mt-0">
-                    <p class="mb-0">Choose your dates, preferred package, and any special requests to personalize your
+                    <p class="mb-0">Choose your dates, preferred package, and any special requests
+                        to personalize your
                         experience.</p>
                 </div>
             </div>
@@ -702,7 +961,8 @@
                     <h5 class="mt-4">Confirm & Pay</h5>
                     <hr class="w-25 mx-auto bg-primary mb-1">
                     <hr class="w-50 mx-auto bg-primary mt-0">
-                    <p class="mb-0">Secure your booking with easy online payment options and instant confirmation.</p>
+                    <p class="mb-0">Secure your booking with easy online payment options and instant
+                        confirmation.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.5s">
@@ -714,7 +974,8 @@
                     <h5 class="mt-4">Relax & Enjoy</h5>
                     <hr class="w-25 mx-auto bg-primary mb-1">
                     <hr class="w-50 mx-auto bg-primary mt-0">
-                    <p class="mb-0">Arrive, unwind, and immerse yourself in an unforgettable luxury experience.</p>
+                    <p class="mb-0">Arrive, unwind, and immerse yourself in an unforgettable luxury
+                        experience.</p>
                 </div>
             </div>
         </div>
@@ -862,7 +1123,8 @@
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-3">Contact</h4>
                 <a class="mb-2 text-white" href="https://maps.app.goo.gl/5ncrayTTiRRveQDD8" target="_blank"><i
-                        class="fa fa-map-marker-alt me-3"></i>Sayali Sanchi , Panchgani - Mahabaleshwar Rd,
+                        class="fa fa-map-marker-alt me-3"></i>Sayali Sanchi ,
+                    Panchgani - Mahabaleshwar Rd,
                     Nandanwan, Panchgani, Maharashtra 412805</a><br><br>
                 <a class="mb-2 text-white"><i class="fa fa-phone-alt me-3"></i>+1 (269) 359-5125</a>
                 <br><br>
@@ -881,22 +1143,22 @@
                 <h4 class="text-white mb-3">Gallery</h4>
                 <div class="row g-2 pt-2">
                     <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="/assets/img/gallery_3.png" alt="">
+                        <img class="img-fluid bg-light p-1" src="/assets/img/about_us.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="/assets/img/package_1.png" alt="">
+                        <img class="img-fluid bg-light p-1" src="/assets/img/front_view.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="/assets/img/gallery_2.png" alt="">
+                        <img class="img-fluid bg-light p-1" src="/assets/img/gallery_6.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="/assets/img/package_2.png" alt="">
+                        <img class="img-fluid bg-light p-1" src="/assets/img/gallery_7.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="/assets/img/3.png" alt="">
+                        <img class="img-fluid bg-light p-1" src="/assets/img/gallery_8.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="/assets/img/1.png" alt="">
+                        <img class="img-fluid bg-light p-1" src="/assets/img/gallery_5.jpg" alt="">
                     </div>
                 </div>
             </div>
