@@ -1,3 +1,82 @@
-<p>
-  gallery works!
-</p>
+<!-- gallery.component.html -->
+<div class="container-xxl py-5 destination" id="gallery">
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h6 class="section-title bg-white text-center text-primary px-3">Gallery</h6>
+      <h1 class="mb-5">Villa Tour</h1>
+    </div>
+
+    <!-- Debug info (remove in production) -->
+    <div *ngIf="!isLoading && !errorMessage" class="text-muted small mb-3">
+
+      Found {{galleryImages.length}} images
+    </div>
+
+    <!-- Loading state -->
+    <div *ngIf="isLoading" class="text-center py-5">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="mt-2">Loading gallery images...</p>
+    </div>
+
+    <!-- Error state -->
+    <div *ngIf="!isLoading && errorMessage" class="alert alert-danger text-center">
+
+      {{ errorMessage }}
+    </div>
+
+    <!-- Gallery content -->
+    <div *ngIf="!isLoading && !errorMessage && galleryImages.length > 0">
+      <!-- Primary images layout -->
+      <div class="row g-3">
+        <!-- Large left column -->
+        <div class="col-lg-7 col-md-6">
+          <div class="row g-3">
+            <!-- First large image -->
+            <div *ngIf="primaryImages[0]" class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
+              <div class="position-relative d-block overflow-hidden rounded">
+                <img class="img-fluid w-100" style="height: 300px; object-fit: cover;" [src]="primaryImages[0].file"
+                  [alt]="'Gallery image ' + primaryImages[0].id">
+              </div>
+            </div>
+
+            <!-- Two medium images -->
+            <div *ngIf="primaryImages[1]" class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+              <div class="position-relative d-block overflow-hidden rounded">
+                <img class="img-fluid w-100" style="height: 200px; object-fit: cover;" [src]="primaryImages[1].file"
+                  [alt]="'Gallery image ' + primaryImages[1].id">
+              </div>
+            </div>
+
+            <div *ngIf="primaryImages[2]" class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+              <div class="position-relative d-block overflow-hidden rounded">
+                <img class="img-fluid w-100" style="height: 200px; object-fit: cover;" [src]="primaryImages[2].file"
+                  [alt]="'Gallery image ' + primaryImages[2].id">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side tall image -->
+        <div *ngIf="primaryImages[3]" class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s">
+          <div class="position-relative d-block h-100 overflow-hidden rounded">
+            <img class="img-fluid w-100 h-100" [src]="primaryImages[3].file"
+              [alt]="'Gallery image ' + primaryImages[3].id" style="object-fit: cover; min-height: 350px;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary images grid -->
+      <div *ngIf="secondaryImages.length > 0" class="row mt-4 g-3">
+        <div *ngFor="let image of secondaryImages; let i = index" class="col-lg-3 col-md-4 col-sm-6 wow zoomIn"
+          [attr.data-wow-delay]="'0.' + (i+1) + 's'">
+          <div class="position-relative d-block overflow-hidden rounded">
+            <img class="img-fluid w-100" style="height: 200px; object-fit: cover;" [src]="image.file"
+              [alt]="'Gallery image ' + image.id">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

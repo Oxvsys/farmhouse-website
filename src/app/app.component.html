@@ -245,8 +245,8 @@
 <!-- Service End -->
 
 
-<!-- Destination Start -->
-<div class="container-xxl py-5 destination" id="gallery">
+<!-- Gallary Start -->
+<!-- <div class="container-xxl py-5 destination" id="gallery">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 class="section-title bg-white text-center text-primary px-3">Gallery</h6>
@@ -259,28 +259,19 @@
                         <a class="position-relative d-block overflow-hidden">
                             <img class="img-fluid " style="width: 800px;height: 300px;" src="/assets/img/gallery_5.jpg"
                                 alt="">
-                            <!-- <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">30%
-                                OFF</div>
-                            <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
-                                Thailand</div> -->
+                           
                         </a>
                     </div>
                     <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
                         <a class="position-relative d-block overflow-hidden">
                             <img class="img-fluid" src="/assets/img/gallery_6.jpg" alt="">
-                            <!-- <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">25%
-                                OFF</div>
-                            <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
-                                Malaysia</div> -->
+                           
                         </a>
                     </div>
                     <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
                         <a class="position-relative d-block overflow-hidden">
                             <img class="img-fluid" src="/assets/img/gallery_7.jpg" alt="">
-                            <!-- <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">35%
-                                OFF</div>
-                            <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
-                                Australia</div> -->
+                            
                         </a>
                     </div>
                 </div>
@@ -289,15 +280,17 @@
                 <a class="position-relative d-block h-100 overflow-hidden">
                     <img class="img-fluid position-absolute w-100 h-100" src="/assets/img/gallery_8.jpg" alt=""
                         style="object-fit: cover;">
-                    <!-- <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">20% OFF
-                    </div>
-                    <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Indonesia
-                    </div> -->
+                    
                 </a>
             </div>
         </div>
     </div>
-</div>
+</div> -->
+
+
+
+<app-gallery></app-gallery>
+
 <!-- Destination Start -->
 
 
@@ -612,7 +605,7 @@
 
 
 
-<div class="container-xxl py-5" id="package">
+<!-- <div class="container-xxl py-5" id="package">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 class="section-title bg-white text-center text-primary px-3">Packages</h6>
@@ -647,7 +640,7 @@
                         <p [innerHTML]="pkg.description"></p>
                     </div>
 
-                    <!-- Fixed Bottom Buttons Inside Card -->
+                   
                     <div class="d-flex justify-content-center position-absolute w-100 px-4"
                         style="bottom: 20px; left: 0;">
                         <a [href]="pkg.readMoreLink" target="_blank" class="btn btn-sm btn-primary px-3 border-end"
@@ -660,7 +653,65 @@
             </div>
         </div>
     </div>
+</div> -->
+
+
+
+
+
+<div class="container-xxl py-5" id="package">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Packages</h6>
+            <h1 class="mb-5">Awesome Packages</h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" *ngFor="let pkg of packages; let i = index"
+                [attr.data-wow-delay]="i * 0.2 + 's'">
+                <div class="package-item position-relative" style="padding-bottom: 70px;height: 550px;">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" [src]="pkg.image" width="600" height="400" style="object-fit: cover;"
+                            alt="Package Image">
+                    </div>
+                    <div class="d-flex border-bottom">
+                        <small class="flex-fill text-center border-end py-2">
+                            <i class="fa fa-calendar-alt text-primary me-2"></i>{{ pkg.duration }} Days
+                        </small>
+                        <small class="flex-fill text-center py-2">
+                            <i class="fa fa-user text-primary me-2"></i>{{ pkg.people }} Person
+                        </small>
+                    </div>
+                    <div class="text-center p-4">
+                        <h3 class="mb-0">₹{{ pkg.basePrice }}</h3>
+
+                        <div class="mb-3">
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                        </div>
+                        <p><strong>{{pkg.title}}</strong></p>
+                        <p [innerHTML]="pkg.description"></p>
+                    </div>
+
+                    <!-- Fixed Bottom Buttons Inside Card -->
+                    <div class="d-flex justify-content-center position-absolute w-100 px-4"
+                        style="bottom: 20px; left: 0;">
+                        <a [href]="pkg.readMoreLink" target="_blank" class="btn btn-sm btn-primary px-3 border-end"
+                            style="border-radius: 30px 0 0 30px;">Read More</a>
+                        <!-- <button (click)="showAddOns(pkg)" class="btn btn-sm btn-primary px-3"
+                            style="border-radius: 0 30px 30px 0;">Book Now</button> -->
+                    </div>
+
+                    <!-- Add-on Dropdown -->
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 
 
@@ -671,166 +722,31 @@
     <div class="container">
         <div class="booking p-5">
             <div class="row g-5 align-items-center">
+
+                <!-- Left Side: Booking Info -->
                 <div class="col-md-6 text-white">
                     <h6 class="text-white text-uppercase">Booking</h6>
                     <h1 class="text-white mb-4">Online Booking</h1>
                     <p class="mb-4">Booking your stay at our luxury villa is quick and hassle-free!
-                        Simply browse our
-                        available dates, select your preferred package, and confirm with easy online
+                        Simply browse our available dates, select your preferred package, and confirm with easy online
                         payment options.
-                        Once booked, you’ll receive instant confirmation, ensuring a smooth and
-                        secure process.</p>
-                    <p class="mb-4">No long forms or complicated steps—just a seamless experience
-                        from start to finish.
-                        Upon arrival, relax and immerse yourself in a world of comfort, privacy, and
-                        adventure. Enjoy a
-                        stress-free getaway with our effortless booking system!
+                        Once booked, you’ll receive instant confirmation, ensuring a smooth and secure process.
+                    </p>
+                    <p class="mb-4">No long forms or complicated steps—just a seamless experience from start to finish.
+                        Upon arrival, relax and immerse yourself in a world of comfort, privacy, and adventure.
+                        Enjoy a stress-free getaway with our effortless booking system!
                     </p>
                     <a class="btn btn-outline-light py-3 px-5 mt-2" href="/#">Read More</a>
                 </div>
 
+                <!-- Right Side: Booking Form -->
                 <div class="col-md-6">
-                    <h1 class="text-white mb-4">Book Your Stay</h1>
-                    <!-- <form>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control bg-transparent" id="name"
-                                        placeholder="Your Name">
-                                    <label for="name">Full Name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control bg-transparent" id="email"
-                                        placeholder="Your Email">
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating date" id="date3" data-target-input="nearest">
-                                    <input type="text" class="form-control bg-transparent datetimepicker-input"
-                                        id="datetime" placeholder="Date & Time" data-target="#date3"
-                                        data-toggle="datetimepicker" />
-                                    <label for="datetime">Date</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <select class="form-select bg-transparent" id="select1">
-                                        <option value="1">Honeymoon Delight</option>
-                                        <option value="2">Family Fun Escape</option>
-                                        <option value="3">Corporate Retreats</option>
-                                    </select>
-                                    <label for="select1">Package</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control bg-transparent" placeholder="Special Request"
-                                        id="message" style="height: 100px"></textarea>
-                                    <label for="message">Description</label>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12">
-                                <re-captcha siteKey="6LecstspAAAAAJBhT3n2hfQragrEwgJuoD3t0RRk"
-                                    (resolved)="onCaptchaResolved($event)" name="recaptcha" required ngModel>
-                                </re-captcha>
-                            </div>
-
-                            <div class="col-12">
-                                <button class="btn btn-outline-light w-100 py-3" type="submit">Book Now</button>
-                            </div>
-                        </div>
-                    </form> -->
-
-
-
-
-
-                    <!-- <form #bookingForm="ngForm" (ngSubmit)="onSubmit(bookingForm)">
-                        <div class="row g-3">
-
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control bg-transparent" id="name"
-                                        placeholder="Your Name" name="full_name" [(ngModel)]="formData.full_name"
-                                        required />
-                                    <label for="name">Full Name</label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control bg-transparent" id="email"
-                                        placeholder="Your Email" name="email" [(ngModel)]="formData.email" required />
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-
-
-                           
-
-
-                            <div class="col-md-6">
-                                <div class="form-floating date" id="date3" data-target-input="nearest">
-                                    <input type="datetime" class="form-control bg-transparent datetimepicker-input"
-                                        id="datetime" placeholder="Date & Time" data-target="#date3"
-                                        data-toggle="datetimepicker" name="date" [(ngModel)]="formData.date" />
-                                    <label for="datetime">Date</label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <select class="form-select bg-transparent" id="select1" name="package"
-                                        [(ngModel)]="formData.package">
-                                        <option value="Honeymoon Delight">Honeymoon Delight</option>
-                                        <option value="Family Fun Escape">Family Fun Escape</option>
-                                        <option value="Corporate Retreats">Corporate Retreats</option>
-                                    </select>
-                                    <label for="select1">Package</label>
-                                </div>
-                            </div>
-
-
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control bg-transparent" placeholder="Special Request"
-                                        id="message" style="height: 100px" name="description"
-                                        [(ngModel)]="formData.description"></textarea>
-                                    <label for="message">Description</label>
-                                </div>
-                            </div>
-
-
-                          
-                            <re-captcha siteKey="6LecstspAAAAAJBhT3n2hfQragrEwgJuoD3t0RRk"
-                                (resolved)="onCaptchaResolved($event)" name="recaptcha" required ngModel>
-                            </re-captcha>
-
-                            <div class="col-12">
-                                <button class="btn btn-outline-light w-100 py-3" type="submit">
-                                    <span *ngIf="isLoading" class="spinner-border spinner-border-sm"></span>
-                                    Book Now
-                                </button>
-                            </div>
-                        </div>
-                    </form> -->
-
-
-
-
-
-                    <div class="card  text-white shadow-lg rounded p-4" style="background-color: #425e32;">
+                    <div class="card text-white shadow-lg rounded p-4" style="background-color: #425e32;">
                         <div class="card-body">
                             <form #bookingForm="ngForm" (ngSubmit)="onSubmit(bookingForm)">
                                 <div class="row g-3">
                                     <!-- Full Name -->
-                                    <div class="col-md-6">
+                                    <div class="col-12 col-md-6">
                                         <div class="form-floating">
                                             <input type="text" class="form-control bg-transparent text-white" id="name"
                                                 placeholder="Your Name" name="full_name"
@@ -840,7 +756,7 @@
                                     </div>
 
                                     <!-- Email -->
-                                    <div class="col-md-6">
+                                    <div class="col-12 col-md-6">
                                         <div class="form-floating">
                                             <input type="email" class="form-control bg-transparent text-white"
                                                 id="email" placeholder="Your Email" name="email"
@@ -849,20 +765,8 @@
                                         </div>
                                     </div>
 
-                                    <!-- Date & Time -->
-                                    <!-- <div class="col-md-6">
-                                        <div class="form-floating date" id="date3" data-target-input="nearest">
-                                            <input type="datetime"
-                                                class="form-control bg-transparent text-white datetimepicker-input"
-                                                id="datetime" placeholder="Date & Time" data-target="#date3"
-                                                data-toggle="datetimepicker" name="date" [(ngModel)]="formData.date" />
-                                            <label for="datetime">Date</label>
-                                        </div>
-                                    </div> -->
-
-
-
-                                    <div class="col-md-6">
+                                    <!-- Date -->
+                                    <div class="col-12 col-md-6">
                                         <div class="form-floating">
                                             <input type="datetime-local" class="form-control bg-transparent text-white"
                                                 id="datetime" name="date" [(ngModel)]="formData.date" required />
@@ -870,24 +774,44 @@
                                         </div>
                                     </div>
 
-
-
-
                                     <!-- Package Selection -->
-                                    <div class="col-md-6">
+                                    <div class="col-12 col-md-6">
                                         <div class="form-floating">
                                             <select class="form-select text-white" style="background-color: #425e32;"
-                                                id="select1" name="package" [(ngModel)]="formData.package">
-                                                <div class="bg-dark">
-                                                    <option value="Honeymoon Delight">Honeymoon
-                                                        Delight</option>
-                                                    <option value="Family Fun Escape">Family Fun
-                                                        Escape</option>
-                                                    <option value="Corporate Retreats">Corporate
-                                                        Retreats</option>
-                                                </div>
+                                                id="packageSelect" name="package" [(ngModel)]="formData.package"
+                                                (change)="onPackageSelect(packages[packageSelect.selectedIndex - 1])"
+                                                #packageSelect required>
+                                                <option value="" disabled selected></option>
+                                                <option *ngFor="let pkg of packages" [ngValue]="pkg.title">
+                                                    {{ pkg.title }} ({{ pkg.basePrice | currency }})
+                                                </option>
                                             </select>
-                                            <label for="select1">Package</label>
+                                            <label for="packageSelect" [class.active]="formData.package">select
+                                                Package</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Add-on Package Selection -->
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-floating">
+                                            <select class="form-select text-white" style="background-color: #425e32;"
+                                                id="addOnSelect" name="addOn" [(ngModel)]="formData.addOn"
+                                                (change)="onAddOnSelect(packagesAddOn[addOnSelect.selectedIndex - 1])"
+                                                #addOnSelect>
+                                                <option value="" disabled selected></option>
+                                                <option *ngFor="let addOn of packagesAddOn" [ngValue]="addOn.package">
+                                                    {{ addOn.package }} ({{ addOn.price | currency }})
+                                                </option>
+                                            </select>
+                                            <label for="addOnSelect" [class.active]="formData.addOn">Add-on
+                                                Package</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Total Price Display -->
+                                    <div class="col-12">
+                                        <div class="alert alert-info mb-0" *ngIf="totalPrice > 0">
+                                            <strong>Your approximate total:</strong> {{ totalPrice | currency }}
                                         </div>
                                     </div>
 
@@ -897,12 +821,12 @@
                                             <textarea class="form-control bg-transparent text-white"
                                                 placeholder="Special Request" id="message" style="height: 100px"
                                                 name="description" [(ngModel)]="formData.description"></textarea>
-                                            <label for="message">Description</label>
+                                            <label for="message">Special Request</label>
                                         </div>
                                     </div>
 
                                     <!-- reCAPTCHA -->
-                                    <div class="recaptcha-wrapper col-6 mb-0">
+                                    <div class="col-12 recaptcha-wrapper mb-0">
                                         <re-captcha siteKey="6LecstspAAAAAJBhT3n2hfQragrEwgJuoD3t0RRk"
                                             (resolved)="onCaptchaResolved($event)" name="recaptcha" required ngModel>
                                         </re-captcha>
@@ -912,21 +836,20 @@
                                     <div class="col-12">
                                         <button class="btn btn-outline-light w-100 mt-0 py-3" type="submit">
                                             <span *ngIf="isLoading" class="spinner-border spinner-border-sm"></span>
-
-                                            Book Now
+                                            Submit
                                         </button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
-
-
                 </div>
+
             </div>
         </div>
     </div>
 </div>
+
 <!-- Booking Start -->
 
 
@@ -985,7 +908,7 @@
 
 
 <!-- Team Start -->
-<div class="container-xxl py-5" id="team">
+<!-- <div class="container-xxl py-5" id="team">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 class="section-title bg-white text-center text-primary px-3">Team</h6>
@@ -1058,12 +981,12 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Team End -->
 
 
 <!-- Testimonial Start -->
-<!-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
         <div class="text-center">
             <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
@@ -1104,7 +1027,7 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 <!-- Testimonial End -->
 
 

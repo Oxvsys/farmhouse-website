@@ -14,6 +14,7 @@ import { PackageComponent } from './@components/package/package.component';
 import { ServiceComponent } from './@components/service/service.component';
 import { TeamComponent } from './@components/team/team.component';
 import { TestimonialComponent } from './@components/testimonial/testimonial.component';
+import { GalleryService } from './@service/gallery.service';
 
 
 
@@ -40,7 +41,9 @@ import { TestimonialComponent } from './@components/testimonial/testimonial.comp
     RecaptchaFormsModule,
 
   ],
-  providers: [[], {
+  providers: [[
+    GalleryService,
+  ], {
 
     provide: RECAPTCHA_SETTINGS,
     useValue: { siteKey: "6LecstspAAAAAJBhT3n2hfQragrEwgJuoD3t0RRk" } as RecaptchaSettings,
