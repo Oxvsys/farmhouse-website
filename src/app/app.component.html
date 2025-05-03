@@ -691,15 +691,16 @@
                             <small class="fa fa-star text-primary"></small>
                             <small class="fa fa-star text-primary"></small>
                         </div>
-                        <p><strong>{{pkg.title}}</strong></p>
-                        <p [innerHTML]="pkg.description"></p>
+                        <p><strong style="color: black;">{{pkg.title}}</strong><small
+                                [innerHTML]="pkg.description"></small></p>
+                        <!-- <p [innerHTML]="pkg.description"></p> -->
                     </div>
 
                     <!-- Fixed Bottom Buttons Inside Card -->
                     <div class="d-flex justify-content-center position-absolute w-100 px-4"
                         style="bottom: 20px; left: 0;">
-                        <a [href]="pkg.readMoreLink" target="_blank" class="btn btn-sm btn-primary px-3 border-end"
-                            style="border-radius: 30px 0 0 30px;">Read More</a>
+                        <a [href]="pkg.readMoreLink" target="_blank" class="btn btn-sm btn-primary px-3 border-end">Read
+                            More</a>
                         <!-- <button (click)="showAddOns(pkg)" class="btn btn-sm btn-primary px-3"
                             style="border-radius: 0 30px 30px 0;">Book Now</button> -->
                     </div>
@@ -718,13 +719,12 @@
 
 
 <!-- Booking Start -->
-<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s" id="book_now">
+<div class="container-xxl py-3 py-md-5 wow fadeInUp" data-wow-delay="0.1s" id="book_now">
     <div class="container">
-        <div class="booking p-5">
-            <div class="row g-5 align-items-center">
-
+        <div class="booking p-3 p-md-5">
+            <div class="row g-4 g-md-5 align-items-center">
                 <!-- Left Side: Booking Info -->
-                <div class="col-md-6 text-white">
+                <div class="col-lg-6 text-white">
                     <h6 class="text-white text-uppercase">Booking</h6>
                     <h1 class="text-white mb-4">Online Booking</h1>
                     <p class="mb-4">Booking your stay at our luxury villa is quick and hassle-free!
@@ -736,100 +736,112 @@
                         Upon arrival, relax and immerse yourself in a world of comfort, privacy, and adventure.
                         Enjoy a stress-free getaway with our effortless booking system!
                     </p>
-                    <a class="btn btn-outline-light py-3 px-5 mt-2" href="/#">Read More</a>
+
                 </div>
 
                 <!-- Right Side: Booking Form -->
-                <div class="col-md-6">
-                    <div class="card text-white shadow-lg rounded p-4" style="background-color: #425e32;">
-                        <div class="card-body">
+                <div class="col-lg-6">
+                    <div class="card shadow-lg rounded-3 overflow-hidden">
+                        <div class="card-body p-4" style="background-color: #425e32;">
+                            <h3 class="text-white mb-4 text-center">Book Your Stay</h3>
                             <form #bookingForm="ngForm" (ngSubmit)="onSubmit(bookingForm)">
                                 <div class="row g-3">
                                     <!-- Full Name -->
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control bg-transparent text-white" id="name"
-                                                placeholder="Your Name" name="full_name"
+                                            <input type="text" class="form-control bg-dark text-white border-0"
+                                                id="name" placeholder="Your Name" name="full_name"
                                                 [(ngModel)]="formData.full_name" required />
-                                            <label for="name">Full Name</label>
+                                            <label for="name" class="text-white-50">Full Name</label>
                                         </div>
                                     </div>
 
                                     <!-- Email -->
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control bg-transparent text-white"
-                                                id="email" placeholder="Your Email" name="email"
-                                                [(ngModel)]="formData.email" required />
-                                            <label for="email">Your Email</label>
+                                            <input type="text" class="form-control bg-dark text-white border-0"
+                                                id="email" placeholder="Phone" name="phone" [(ngModel)]="formData.email"
+                                                required />
+                                            <label for="email" class="text-white-50">Phone</label>
                                         </div>
                                     </div>
 
                                     <!-- Date -->
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating">
-                                            <input type="datetime-local" class="form-control bg-transparent text-white"
-                                                id="datetime" name="date" [(ngModel)]="formData.date" required />
-                                            <label for="datetime">Date & Time</label>
+                                            <input type="datetime-local"
+                                                class="form-control bg-dark text-white border-0" id="datetime"
+                                                name="date" [(ngModel)]="formData.date" required />
+                                            <label for="datetime" class="text-white-50">Date & Time</label>
                                         </div>
                                     </div>
 
                                     <!-- Package Selection -->
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating">
-                                            <select class="form-select text-white" style="background-color: #425e32;"
-                                                id="packageSelect" name="package" [(ngModel)]="formData.package"
-                                                (change)="onPackageSelect(packages[packageSelect.selectedIndex - 1])"
-                                                #packageSelect required>
-                                                <option value="" disabled selected></option>
-                                                <option *ngFor="let pkg of packages" [ngValue]="pkg.title">
-                                                    {{ pkg.title }} ({{ pkg.basePrice | currency }})
+                                            <select class="form-select bg-dark text-white border-0" id="packageSelect"
+                                                name="package" [(ngModel)]="formData.packageId"
+                                                (change)="onPackageSelect()" #packageSelect required>
+                                                <option value="" disabled selected class="text-muted">Select a package
+                                                </option>
+                                                <option *ngFor="let pkg of packages" [ngValue]="pkg.id"
+                                                    class="text-white">
+                                                    {{ pkg.title }} (₹{{ pkg.basePrice }})
                                                 </option>
                                             </select>
-                                            <label for="packageSelect" [class.active]="formData.package">select
-                                                Package</label>
+                                            <label for="packageSelect" class="text-white-50">Select Package</label>
                                         </div>
                                     </div>
 
                                     <!-- Add-on Package Selection -->
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating">
-                                            <select class="form-select text-white" style="background-color: #425e32;"
-                                                id="addOnSelect" name="addOn" [(ngModel)]="formData.addOn"
-                                                (change)="onAddOnSelect(packagesAddOn[addOnSelect.selectedIndex - 1])"
+                                            <select class="form-select bg-dark text-white border-0" id="addOnSelect"
+                                                name="addOn" [(ngModel)]="formData.addOn" (change)="onAddOnSelect()"
                                                 #addOnSelect>
-                                                <option value="" disabled selected></option>
-                                                <option *ngFor="let addOn of packagesAddOn" [ngValue]="addOn.package">
-                                                    {{ addOn.package }} ({{ addOn.price | currency }})
+                                                <option value="" disabled selected class="text-muted">Add an option
+                                                </option>
+                                                <option *ngFor="let addOn of packagesAddOn" [ngValue]="addOn.package"
+                                                    class="text-white">
+                                                    {{ addOn.package }} (₹{{ addOn.price }})
                                                 </option>
                                             </select>
-                                            <label for="addOnSelect" [class.active]="formData.addOn">Add-on
-                                                Package</label>
+                                            <label for="addOnSelect" class="text-white-50">Add-on Package</label>
                                         </div>
                                     </div>
 
                                     <!-- Total Price Display -->
-                                    <div class="col-12">
-                                        <div class="alert alert-info mb-0" *ngIf="totalPrice > 0">
-                                            <strong>Your approximate total:</strong> {{ totalPrice | currency }}
+                                    <div class="col-6">
+                                        <div class="alert alert-dark mb-0 d-flex align-items-center"
+                                            *ngIf="totalPrice > 0">
+                                            <i class="fas fa-tag me-2"></i>
+                                            <div>
+                                                <strong class="d-block">Estimated Total: ₹{{ totalPrice}}</strong>
+                                                <!-- <span class="fs-5">{{ totalPrice}}</span> -->
+                                            </div>
                                         </div>
                                     </div>
 
                                     <!-- Description -->
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control bg-transparent text-white"
+                                            <textarea class="form-control bg-dark text-white border-0"
                                                 placeholder="Special Request" id="message" style="height: 100px"
                                                 name="description" [(ngModel)]="formData.description"></textarea>
-                                            <label for="message">Special Request</label>
+                                            <label for="message" class="text-white-50">Special Requests</label>
                                         </div>
                                     </div>
 
-                                    <!-- reCAPTCHA -->
-                                    <div class="col-12 recaptcha-wrapper mb-0">
-                                        <re-captcha siteKey="6LecstspAAAAAJBhT3n2hfQragrEwgJuoD3t0RRk"
-                                            (resolved)="onCaptchaResolved($event)" name="recaptcha" required ngModel>
-                                        </re-captcha>
+                                    <!-- reCAPTCHA - Improved Responsive Styling -->
+                                    <div class="col-12">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="recaptcha-wrapper w-100">
+                                                <re-captcha siteKey="6LecstspAAAAAJBhT3n2hfQragrEwgJuoD3t0RRk"
+                                                    (resolved)="onCaptchaResolved($event)" name="recaptcha" required
+                                                    ngModel class="w-100">
+                                                </re-captcha>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <!-- Submit Button -->
@@ -844,7 +856,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -986,7 +997,7 @@
 
 
 <!-- Testimonial Start -->
-<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+<!-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
         <div class="text-center">
             <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
@@ -1001,35 +1012,93 @@
                 <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita
                     erat ipsum et lorem et sit.</p>
             </div>
-            <div class="testimonial-item bg-white text-center border p-4">
-                <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="/assets/img/testimonial-2.jpg"
-                    style="width: 80px; height: 80px;">
-                <h5 class="mb-0">John Doe</h5>
-                <p>New York, USA</p>
-                <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos.
-                    Clita erat ipsum et lorem et sit.</p>
-            </div>
-            <div class="testimonial-item bg-white text-center border p-4">
-                <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="/assets/img/testimonial-3.jpg"
-                    style="width: 80px; height: 80px;">
-                <h5 class="mb-0">John Doe</h5>
-                <p>New York, USA</p>
-                <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos.
-                    Clita erat ipsum et lorem et sit.</p>
-            </div>
-            <div class="testimonial-item bg-white text-center border p-4">
-                <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="/assets/img/testimonial-4.jpg"
-                    style="width: 80px; height: 80px;">
-                <h5 class="mb-0">John Doe</h5>
-                <p>New York, USA</p>
-                <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos.
-                    Clita erat ipsum et lorem et sit.</p>
-            </div>
+
         </div>
     </div>
-</div>
+</div> -->
 <!-- Testimonial End -->
 
+
+
+
+<!-- Testimonials Section -->
+<section class="testimonial-section py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h6 class="text-primary text-uppercase">Client Reviews</h6>
+            <h2 class="mb-4">What Our <span class="text-primary">Guests Say</span></h2>
+        </div>
+
+        <!-- Bootstrap Carousel -->
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div *ngFor="let testimonial of testimonials; let i = index" class="carousel-item"
+                    [class.active]="i === 0">
+                    <div class="testimonial-card mx-auto">
+                        <div class="d-flex align-items-center mb-4">
+                            <img [src]="getTestimonialImage(testimonial)" class="rounded-circle me-3" width="60"
+                                height="60" alt="Guest">
+                            <div>
+                                <h5 class="mb-1">{{ testimonial.data.string_20250503072936274 || 'Guest' }}</h5>
+                                <div class="text-warning">
+                                    <span *ngFor="let star of getStars(testimonial.data.dropdown_20250503072949996)">
+                                        <i [class]="star"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-content mb-3"
+                            [innerHTML]="testimonial.data.description_20250503072945701 || 'No review text'"></div>
+                        <small class="text-muted">
+                            <i class="far fa-calendar-alt me-1"></i>
+                            {{ testimonial.submitted_at | date:'mediumDate' }}
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-primary rounded-circle" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-primary rounded-circle" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+
+
+    <!-- Post Review Section -->
+    <!-- <section class="post-review-section py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4 p-md-5">
+                            <i class="fas fa-comment-alt fa-3x text-primary mb-4"></i>
+                            <h2 class="mb-3">Share Your Experience</h2>
+                            <p class="lead mb-4">We'd love to hear about your stay at our property. Your feedback helps
+                                us improve!</p>
+                            <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                                <button class="btn btn-primary btn-lg px-4" (click)="openReviewForm()">
+                                    <i class="fas fa-pencil-alt me-2"></i> Write a Review
+                                </button>
+
+                            </div>
+                            <div class="mt-4 text-muted small">
+                                <i class="fas fa-info-circle me-2"></i>
+                                Your review will be published after moderation
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+</section>
 
 <!-- Footer Start -->
 <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -1117,6 +1186,8 @@
             </div>
         </div>
     </div>
+
+
 </div>
 <!-- Footer End -->
 

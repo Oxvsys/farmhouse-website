@@ -15,6 +15,8 @@ import { ServiceComponent } from './@components/service/service.component';
 import { TeamComponent } from './@components/team/team.component';
 import { TestimonialComponent } from './@components/testimonial/testimonial.component';
 import { GalleryService } from './@service/gallery.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 

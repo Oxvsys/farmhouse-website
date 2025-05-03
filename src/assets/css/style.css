@@ -21,11 +21,73 @@
 
 
 
+/* testimonial */
 
+.testimonial-section {
+    background-color: #f8f9fa;
+}
 
+.testimonial-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    max-width: 800px;
+    margin: 0 auto;
+}
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 40px;
+    height: 40px;
+    background-size: 60%;
+}
 
+.testimonial-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .testimonial-card {
+        padding: 20px;
+    }
+}
+
+.post-review-section {
+    background-color: #f8f9fa;
+}
+
+.post-review-section .card {
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.post-review-section .card:hover {
+    transform: translateY(-5px);
+}
+
+.post-review-section .btn {
+    min-width: 200px;
+}
+
+.post-review-section .btn-primary {
+    background-color: #425e32;
+    border-color: #425e32;
+}
+
+.post-review-section .btn-primary:hover {
+    background-color: #344a26;
+    border-color: #344a26;
+}
+
+@media (max-width: 576px) {
+    .post-review-section .btn {
+        width: 100%;
+    }
+}
 
 
 :root {

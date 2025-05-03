@@ -52,7 +52,7 @@ export class GalleryComponent implements OnInit {
     this.galleryImages = items
       .flatMap(item => item.file_data || [])
       .filter(file => file?.field_name === this.targetFieldName && !file?.is_deleted && file?.file);
-    console.log('Filtered images:', this.galleryImages); // Debug log
+    // console.log('Filtered images:', this.galleryImages); 
     if (this.galleryImages.length === 0) {
       this.errorMessage = 'No images found with the specified field name';
     } else {
